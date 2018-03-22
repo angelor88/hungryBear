@@ -33,15 +33,19 @@ module.exports = {
       },
       {
         test: /\.js$/,
-        exclude: /node_modules/,
+        exclude:  [
+           /node_modules/,
+           /spec/,
+           /js/
+         ],
         loader: "eslint-loader"
       },
       {
         test: /\.js$/,
-        exclude:  [
-           /node_modules/,
-           /spec/
-         ],
+        exclude: [
+          /node_modules/,
+          /spec/
+        ],
         loader: "babel-loader",
         options: {
           presets: ['es2015']
